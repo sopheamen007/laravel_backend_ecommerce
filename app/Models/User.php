@@ -42,4 +42,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function keepSignedIn()
+    {
+        return $this->keep_signed_in == 1 ? true : false;
+    }
+
+    public function emailMarketing()
+    {
+        return $this->email_marketing == 1 ? true : false;
+    }
+
+    public function isOnline()
+    {
+        return $this->online_status == 1 ? true : false;
+    }
+
 }

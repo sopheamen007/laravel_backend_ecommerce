@@ -1,22 +1,27 @@
 <?php
-
+ 
 namespace Database\Seeders;
-
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+ 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+ 
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeders.
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $productsData = [
+            ['name' => 'Product 1', 'description' => 'Description of Product 1'],
+            ['name' => 'Product 2', 'description' => 'Description of Product 2'],
+            ['name' => 'Product 3', 'description' => 'Description of Product 3'],
+            ['name' => 'Product 4', 'description' => 'Description of Product 4'],
+            ['name' => 'Product 5', 'description' => 'Description of Product 5'],
+        ];
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        DB::table('products')->insert($productsData);
     }
 }
